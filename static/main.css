@@ -1,0 +1,225 @@
+html {
+//	background-color: #bababa;
+	background-color: #666;
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+}
+
+body {
+	margin:0px;
+	padding:0px;
+	text-align:center;
+//	background-color:#bababa;
+	background-color: #666;
+}
+
+h2 {
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+        color: #003366;
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+}
+h3,h4 {
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+}
+p {
+       margin-left: 0px;
+}
+#page {
+	width:900px;
+	margin:15px auto;
+	text-align:left;
+}
+
+#page_contents {
+	width:890px;
+	margin:0px 5px 0px 5px;
+	position:relative;
+	background-color:#fff;
+	border-top:5px solid #003664;
+	border-bottom:5px solid #003664;
+	min-height: 800px;
+}
+
+#header {
+//	height:50px;
+        border-bottom:1px solid #9a0000;
+}
+
+#page_title {
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+	font-size: 2.1em;
+	font-weight: normal;
+//	color: #9a0000;
+	color: #003366;
+//	color: #000000;
+        margin-left: 10px;
+}
+#page_subtitle {
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+	font-weight: normal;
+	color: #00000;
+        margin-left: 15px;
+}
+
+#page_subtitle a {
+	text-decoration: none;
+        color: #4466a5;
+}
+#page_subtitle a:hover {
+	border: 1px solid;
+}
+
+
+#info_container {
+//    border-top:1px solid #000;
+//    border-bottom:1px solid #000;
+//    border-left: 4px solid #aaa;
+    padding: 0;
+//    border: 1pt solid #000;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#subtext {
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+	font-weight: normal;
+	color: #00000;
+       font-size: 1em;
+        margin-left: 10px;
+}
+#subtext a {
+	text-decoration: none;
+        color: #4466a5;
+}
+
+#subtext a:hover {
+        border: 1pt solid #000;
+}
+
+
+#normal {
+    margin-left: 15px;
+    position: relative;
+    width: 750px;
+}
+
+#normal a {
+    text-decoration: none;
+    color: #4466a5;
+}
+
+#normal a:hover {
+    border: 1pt solid #000;
+}
+#navigation {
+	height: 25px;
+        margin: 0;
+        padding: 0;
+}
+
+
+#navigation li {
+
+	float:left;
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+#navigation li a {
+//    padding: 0 0.7em 0 0.6em;
+}
+
+#navigation li.active a,
+#navigation li a:hover {
+}
+
+#navigation li.active a {
+	background-position:bottom center;
+	background-repeat:no-repeat;
+}
+
+.navigation_tabs {
+	list-style-type:none;
+        padding: 0;
+        white-space: nowrap;
+	margin:0;
+	clear:both;
+	border-bottom:1px solid #aa6924;
+	height: 23px;
+}
+.navigation_tabs li  {
+        display: inline;
+	float:left;
+	text-align:center;
+	margin: 0px;
+	padding: 0px;
+}
+.navigation_tabs li  a  {
+	display:block;
+	height:20px;
+	background-color:#fff;
+        color: #505050;
+        text-decoration: none;
+        border-right: 1px solid #606060;
+        display: block;
+        font-weight: bold;
+	white-space:nowrap;
+	padding: 3px 15px 0px 15px;
+}
+
+
+.navigation_tabs li  a:hover  {
+	color:#fff;
+        background-color: #000;
+}
+.navigation_tabs li  a.active  {
+	background-color:#efdfc5;
+        cursor: default;
+}
+.navigation_tabs li  a:hover.active  {
+    color: #505050;
+    background-color:#efdfc5;
+}
+
+table.sched {
+        border-width: 1px 1px 1px 1px;
+        border-spacing: 0px;
+        border-style: outset outset outset outset;
+        border-color: black black black black;
+        border-collapse: collapse;
+        width: 750px;
+}
+table.sched th {
+        border-width: 1px 1px 1px 1px;
+        padding: 3px 3px 3px 3px;
+        border-style: inset inset inset inset;
+        border-color: gray gray gray gray;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+table.sched td {
+        border-width: 1px 1px 1px 1px;
+        padding: 3px 3px 3px 3px;
+        border-style: inset inset inset inset;
+        border-color: gray gray gray gray;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+table.sched tr:nth-child(odd) {
+	background-color: #ffe;
+
+}
+table.sched tr:nth-child(even) {
+	background-color: #fee;
+
+}
+
+.reading_info {
+        font-size: 0.9em;
+}
+#schedule_container {
+        margin-left: 50px;
+}

@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>{{ block "title" . }}
+		{{ .Site.Title }}
+		{{ end }}
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--- <link rel="shortcut icon" href=""> -->
+	<link rel="stylesheet" type="text/css" href={{ relURL "main.css" }}>
+</head>
+
+<body>
+	<div id="page">
+		<div id="page_contents">
+			<div id="header">
+				<div id="page_title">601.433 / 601.633 Introduction to Algorithms<br> Fall {{.Site.Params.year}}</div>
+			</div>
+
+			{{ block "nav" . }}
+
+			{{ end }}
+
+			<div id="normal">
+			{{ block "main" . }}
+      		<!-- The part of the page that begins to differ between templates -->
+    		{{ end }}
+    		</div>
+		</div>
+	</div>
+</body>
+</html>

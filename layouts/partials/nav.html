@@ -1,0 +1,7 @@
+	<ul class="navigation_tabs">
+		<li><a {{ if eq $.Page.Params.key "home" }} class="active" {{ end }} href= {{ relURL "index.html" }}>Home</a></li>
+		<li><a {{ if eq $.Page.Params.key "schedule" }} class="active" {{ end }} href={{ relURL "schedule/" }}>Schedule</a></li>
+		<li><a {{ if eq $.Page.Params.key "policies" }} class="active" {{ end }} href={{ relURL "policies/" }}>Course Policies</a></li>
+		<li><a {{ if eq $.Page.Params.key "resources" }} class="active" {{ end }} href={{ relURL "resources/" }}>Resources</a></li>
+		<li><a {{ if eq $.Page.Params.key "assignments" }} class="active" {{ end }} href={{ relURL "assignments/" }}>Assignments</a></li>
+	</ul>

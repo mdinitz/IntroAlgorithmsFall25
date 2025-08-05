@@ -1,0 +1,7 @@
+baseURL = 'https://www.cs.jhu.eu/~mdinitz/classes/IntroAlgorithms/Fall2024/'
+languageCode = 'en-us'
+title = 'JHU 601.433/633 Introduction to Algorithms, Fall 2024'
+
+[params]
+	year = '2024'
+
