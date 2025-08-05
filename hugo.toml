@@ -1,7 +1,10 @@
-baseURL = 'https://www.cs.jhu.eu/~mdinitz/classes/IntroAlgorithms/Fall2024/'
+baseURL = 'https://www.cs.jhu.edu/~mdinitz/classes/IntroAlgorithms/Fall2024/'
 languageCode = 'en-us'
-title = 'JHU 601.433/633 Introduction to Algorithms, Fall 2024'
+title = 'JHU 601.433/633 Introduction to Algorithms, Fall 2025'
 
 [params]
-	year = '2024'
+	year = '2025'
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
