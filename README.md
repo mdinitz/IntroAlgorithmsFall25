@@ -1,0 +1,3 @@
+Repository for webpage for JHU EN.601.433/633 Introduction to Algorithms.  
+
+This webpage is created with hugo, but is mostly still straight HTML from when I used to do it that way.  All content is in the content subdirectory.  You should be able to change anything in there and push to update the webpage.  I recommend getting hugo to work at home so you can test (e.g., by using 'hugo server') whether your changes worked before pushing.
