@@ -1,0 +1,290 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{theorem}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage[]{algorithm2e}
+\usepackage{xfrac}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{enumitem}                     
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes}
+
+\tikzstyle{code} = [black!90, draw=black!30, fill=black!5, very thick,
+    rectangle, dashed, inner xsep=10pt, inner ysep=7pt]
+
+\newenvironment{codebox}{
+    \hspace{.05\textwidth}
+        \begin{tikzpicture}
+            \node[code] \bgroup
+                \begin{minipage}{.65\textwidth}
+                    \begin{alltt}}
+                    {\end{alltt}
+                \end{minipage}
+            \egroup;
+        \end{tikzpicture}
+}
+
+
+% This is the stuff for normal spacing
+%\makeatletter
+% \setlength{\textwidth}{6.5in}
+% \setlength{\oddsidemargin}{0in}
+% \setlength{\evensidemargin}{0in}
+% \setlength{\topmargin}{0.25in}
+% \setlength{\textheight}{8.25in}
+% \setlength{\headheight}{0pt}
+% \setlength{\headsep}{0pt}
+% \setlength{\marginparwidth}{59pt}
+%
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{5pt plus 1pt}
+% \setlength{\theorempreskipamount}{5pt plus 1pt}
+% \setlength{\theorempostskipamount}{0pt}
+% \setlength{\abovedisplayskip}{8pt plus 3pt minus 6pt}
+ 
+ 
+ \usepackage{titlesec}
+
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat*{\paragraph}{\bfseries}
+\titleformat*{\subparagraph}{\bfseries}
+
+% \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+%                                   {2ex plus -1ex minus -.2ex}%
+%                                   {1.3ex plus .2ex}%
+%                                   {\normalfont\Large\bfseries}}%
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\large\bfseries}}%
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\normalsize\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{0mm}%
+%                                    {1ex \@plus1ex \@minus.2ex}%
+%                                    {-1em}%
+%                                    {\normalfont\normalsize\bfseries}}
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%                                       {2.0ex \@plus1ex \@minus .2ex}%
+%                                       {-1em}%
+%                                      {\normalfont\normalsize\bfseries}}
+%\makeatother
+
+\newenvironment{proof}{{\bf Proof:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofof}[1]{{\bf Proof of #1:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofofnobox}[1]{{\bf#1:  }}{}
+\newenvironment{example}{{\bf Example:  }}{\hfill\rule{2mm}{2mm}}
+%\renewcommand{\thesection}{\lecnum.\arabic{section}}
+
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+%\renewcommand{\theequation}{\lecnum.\arabic{equation}}
+%\renewcommand{\thefigure}{\lecnum.\arabic{figure}}
+
+%\newcounter{LecNum}
+%\setcounter{LecNum}{1}
+
+%\newtheorem{fact}{Fact}[LecNum]
+\newtheorem{fact}{Fact}
+\newtheorem{lemma}[fact]{Lemma}
+\newtheorem{theorem}[fact]{Theorem}
+\newtheorem{definition}[fact]{Definition}
+\newtheorem{corollary}[fact]{Corollary}
+\newtheorem{proposition}[fact]{Proposition}
+\newtheorem{claim}[fact]{Claim}
+\newtheorem{exercise}[fact]{Exercise}
+
+% math notation
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\F}{\ensuremath{\mathcal F}}
+\newcommand{\SymGrp}{\ensuremath{\mathfrak S}}
+
+\newcommand{\size}[1]{\ensuremath{\left|#1\right|}}
+%\newcommand{\ceil}[1]{\ensuremath{\left\lceil#1\right\rceil}}
+%\newcommand{\floor}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+
+% anupam's abbreviations
+\newcommand{\e}{\epsilon}
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\junk}[1]{}
+\newcommand{\sse}{\subseteq}
+\newcommand{\union}{\cup}
+\newcommand{\meet}{\wedge}
+
+\newcommand{\prob}[1]{\ensuremath{\text{{\bf Pr}$\left[#1\right]$}}}
+\newcommand{\expct}[1]{\ensuremath{\text{{\bf E}$\left[#1\right]$}}}
+\newcommand{\Event}{{\mathcal E}}
+\newcommand{\E}{\ensuremath{\text{E}}}
+
+\newcommand{\mnote}[1]{\normalmarginpar \marginpar{\tiny #1}}
+
+\setenumerate[0]{label=(\alph*)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document begins here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\noindent {\large {\bf 601.433/633 Introduction to Algorithms} \hfill {{\bf Fall 2025}}}\\
+{{\bf Homework \#1}} \hfill {{\bf Due:} September 15, 2025, 11:59pm} \\
+\rule[0.1in]{\textwidth}{0.4pt}
+
+Remember: you may work in groups of up to three people, but must write up your solution entirely on your own.  Solutions must by typeset (\LaTeX\ preferred but not required).  Collaboration is limited to discussing the problems -- you may not look at, compare, reuse, etc.~any text from anyone else in the class.  Please include your list of collaborators on the first page of your submission.  You may use the internet to look up formulas, definitions, etc., but may not simply look up the answers online.  
+
+Please include proofs with all of your answers, unless stated otherwise.
+
+\noindent \rule[0.1in]{\textwidth}{0.4pt}
+
+\section{Asymptotic Notation (25 points)}
+
+For each of the following statements say if it true or false and prove your answer.  The base of $\log$ is $2$ unless otherwise specified, and $\ln$ is $\log_e$.  Assume the domain of the functions are the positive reals.
+
+\begin{enumerate}
+
+\item $2^n = \Omega(3^n)$
+
+
+\item $n \sin n = O(n)$
+
+\item $e^n = O(e^{(n-5)})$
+
+\item $\frac{n}{\log^2 n} = \Omega(n^{0.9})$
+
+\item $(\log(n^{1/5}))^{3/2} = \Theta(\log (n^{3}))$
+
+\item $2^{(9/4) \log n} = O(n^2)$
+
+\item Let $f,g$ be positive functions. Then $f(n)+g(n) = \Omega(\max(f(n),g(n)))$
+
+\item Let $f,g$ be positive functions. Then $f(n)+g(n) = O(\max(f(n),g(n)))$
+
+
+\end{enumerate}
+
+
+\section{Recurrences (25 pts)}
+
+Solve the following recurrences, giving your answer in $\Theta$ notation (so prove both an upper bound and a lower bound).  For each of them you may assume $T(x) = 1$ for $x \leq 5$.   Justify your answer (formal proof not necessary, but recommended).
+
+\begin{enumerate}
+
+\item $T(n) = 6 T(n/5) + n^2$
+
+\item $T(n) = 10 T(n-5)$
+
+\item $T(n) = 2 T(n/2) + \log n$
+
+\end{enumerate}
+
+
+\section{Basic Proofs (25 pts)}
+\begin{enumerate}
+
+\item Prove \textbf{by induction} that $\sum_{i=1}^n i^2 = \frac16 n (n+1)(2n+1)$ 
+
+\item Consider a polynomial $P(x) = \sum_{k=0}^n a_k x^k$, and consider the following algorithm:
+
+\begin{algorithm}[H]
+$y = 0$\;
+\For{$i=n$ \textbf{\textup{down to}} $0$}{
+	$y = a_i + (x\cdot y)$\;
+}
+\Return $y$;
+\end{algorithm}
+Prove that this algorithm correctly computes $P(x)$ when called on input $x$.\\
+\textbf{Hint:} Think of an appropriate ``loop invariant" / ``induction hypothesis" for a proof by induction.
+
+\item I have a bucket with $23$ balls, 13 of which are white and 10 of which are black.  If I draw $8$ balls at random from the bucket (all at one time), what is the probability that exactly five of them are white?
+
+\end{enumerate}
+
+
+\section{Mistakes and Insertion Sort (25 pts)}
+
+Given an array $[a_0, a_1, \dots, a_{n-1}]$, a \emph{mistake} is a pair $(i,j)$ such that $i < j$ but $a_i > a_j$.  For example, in the array $[5, 3, 2, 10]$ there are are three mistakes ($(0,1), (0, 2), (1,2)$).  Note that the array has no mistakes if and only if it is sorted, so the number of mistakes can be thought of as a measure of how well-sorted an array is.  For this problem, assume that all elements in an array are distinct.
+
+\begin{enumerate}
+\item What is the expected number of mistakes in a random array?  More formally, consider a random permutation $\pi$ of $n$ distinct elements $a_0, \dots, a_{n-1}$: what is the expected number of mistakes in the resulting array?
+
+\item Recall the insertion sort algorithm: 
+
+\begin{algorithm}[H]
+\For{$i=1$ \KwTo $n-1$}{
+	$j = i$\;
+	\While{$j > 0$ and $A[j-1] > A[j]$}{
+		Swap $A[j]$ and $A[j-1]$\;
+		$j = j-1$\;
+	}
+}
+\end{algorithm}
+
+Suppose that our array has $d$ mistakes.  Prove a lower bound on the running time of insertion sort in terms of $d$ (asymptotic notation OK).
+
+\item Prove an upper bound on the running time of insertion sort in terms of $n$ and $d$ (asymptotic notation OK).
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
