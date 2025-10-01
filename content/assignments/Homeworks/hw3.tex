@@ -1,0 +1,272 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{theorem}
+\usepackage{hyperref}
+\usepackage{fullpage}
+%\usepackage[]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{enumitem}                     
+
+\newif\ifrubric
+\rubrictrue
+\rubricfalse
+
+% This is the stuff for normal spacing
+%\makeatletter
+% \setlength{\textwidth}{6.5in}
+% \setlength{\oddsidemargin}{0in}
+% \setlength{\evensidemargin}{0in}
+% \setlength{\topmargin}{0.25in}
+% \setlength{\textheight}{8.25in}
+% \setlength{\headheight}{0pt}
+% \setlength{\headsep}{0pt}
+% \setlength{\marginparwidth}{59pt}
+%
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{5pt plus 1pt}
+% \setlength{\theorempreskipamount}{5pt plus 1pt}
+% \setlength{\theorempostskipamount}{0pt}
+% \setlength{\abovedisplayskip}{8pt plus 3pt minus 6pt}
+ 
+ 
+ \usepackage{titlesec}
+
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat*{\paragraph}{\bfseries}
+\titleformat*{\subparagraph}{\bfseries}
+
+% \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+%                                   {2ex plus -1ex minus -.2ex}%
+%                                   {1.3ex plus .2ex}%
+%                                   {\normalfont\Large\bfseries}}%
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\large\bfseries}}%
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\normalsize\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{0mm}%
+%                                    {1ex \@plus1ex \@minus.2ex}%
+%                                    {-1em}%
+%                                    {\normalfont\normalsize\bfseries}}
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%                                       {2.0ex \@plus1ex \@minus .2ex}%
+%                                       {-1em}%
+%                                      {\normalfont\normalsize\bfseries}}
+%\makeatother
+
+\newenvironment{proof}{{\bf Proof:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofof}[1]{{\bf Proof of #1:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofofnobox}[1]{{\bf#1:  }}{}
+\newenvironment{example}{{\bf Example:  }}{\hfill\rule{2mm}{2mm}}
+%\renewcommand{\thesection}{\lecnum.\arabic{section}}
+
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+%\renewcommand{\theequation}{\lecnum.\arabic{equation}}
+%\renewcommand{\thefigure}{\lecnum.\arabic{figure}}
+
+%\newcounter{LecNum}
+%\setcounter{LecNum}{1}
+
+%\newtheorem{fact}{Fact}[LecNum]
+\newtheorem{fact}{Fact}
+\newtheorem{lemma}[fact]{Lemma}
+\newtheorem{theorem}[fact]{Theorem}
+\newtheorem{definition}[fact]{Definition}
+\newtheorem{corollary}[fact]{Corollary}
+\newtheorem{proposition}[fact]{Proposition}
+\newtheorem{claim}[fact]{Claim}
+\newtheorem{exercise}[fact]{Exercise}
+
+% math notation
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\F}{\ensuremath{\mathcal F}}
+\newcommand{\SymGrp}{\ensuremath{\mathfrak S}}
+
+\newcommand{\size}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil#1\right\rceil}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+
+% anupam's abbreviations
+\newcommand{\e}{\epsilon}
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\junk}[1]{}
+\newcommand{\sse}{\subseteq}
+\newcommand{\union}{\cup}
+\newcommand{\meet}{\wedge}
+
+\newcommand{\prob}[1]{\ensuremath{\text{{\bf Pr}$\left[#1\right]$}}}
+\newcommand{\expct}[1]{\ensuremath{\text{{\bf E}$\left[#1\right]$}}}
+\newcommand{\Event}{{\mathcal E}}
+
+\newcommand{\mnote}[1]{\normalmarginpar \marginpar{\tiny #1}}
+
+\setenumerate[0]{label=(\alph*)}
+
+\usepackage{alltt}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes}
+\tikzstyle{code} = [black!90, draw=black!30, fill=black!5, very thick,
+    rectangle, dashed, inner xsep=10pt, inner ysep=7pt]
+
+\newenvironment{codebox}{
+    \hspace{.05\textwidth}
+        \begin{tikzpicture}
+            \node[code] \bgroup
+                \begin{minipage}{.80\textwidth}
+                    \begin{alltt}}
+                    {\end{alltt}
+                \end{minipage}
+            \egroup;
+        \end{tikzpicture}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document begins here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\noindent {\large {\bf 601.433/633 Introduction to Algorithms} \hfill {{\bf Fall 2025}}}\\
+{{\bf Homework \#3}} \hfill {{\bf Due:} October 13, 2025, 11:59pm} \\
+\rule[0.1in]{\textwidth}{0.4pt}
+
+Remember: you may work in groups of up to three people, but must write up your solution entirely on your own.  Collaboration is limited to discussing the problems -- you may not look at, compare, reuse, etc.~any text from anyone else in the class.  Please include your list of collaborators on the first page of your submission.  You may use the internet to look up formulas, definitions, etc., but may not simply look up the answers online.  
+
+Please include proofs with all of your answers, unless stated otherwise.
+
+\noindent \rule[0.1in]{\textwidth}{0.4pt}
+
+\section{More counters (14 points)}
+We saw in class that if we have a binary counter which we increment $n$ times the total cost (measured in terms of the number of bits that are flipped) is $O(n)$, i.e.~the amortized cost of an increment is $O(1)$.  What if we also want to be able to decrement the counter?  Throughout this problem we will assume that the counter never goes negative -- at every point in time the number of increments up to that point is at least as large as the number of decrements.
+
+ Show that it is possible for a sequence of $n$ operations (increments and decrements) to have amortized cost of $\Omega(\log n)$ per operation (so the total cost is $\Omega(n \log n)$).  This should hold even if we start from $0$ and the counter never goes negative.
+
+
+
+
+\section{Heaps (13 points)}
+\begin{enumerate}
+\item (5 points) Draw all possible binary min-heaps on the keys $\{1,2,3,4,5\}$.  (You may hand-draw if you want to, but please make sure your drawings are legible).
+
+\item (8 points) How many different binomial heaps are there on the keys $\{1,2,3,4,5,6\}$?  Prove your answer.  
+
+\end{enumerate}
+
+\section{Range Queries (13 points)}
+We saw in class how to use B-trees as dictionaries, and in particular how to use them to do $insert$ and $lookup$ operations.  Some of you might naturally wonder why we bother to do this, when hash tables (which we will talk about later) already allow us to do this. While there are many good reasons to use search trees rather than hash tables, one informal reason is that search trees can in some cases be either used directly or easily extended to allow efficient queries that are difficult or impossible to do efficiently in a hash table.  
+
+An important example of this is a \emph{range query}.  Suppose that all keys are distinct.  In addition to being able to insert and lookup (and possibly delete), we want to allow a new operation \emph{range($x,y$)} which is supposed to return the number of keys in the tree which are at least $x$ and at most $y$.
+
+In this problem we will only be concerned with 2-3-4 trees (B-trees with parameter $t = 2$). Given a 2-3-4 tree with $n$ elements, show how to implement \emph{range($x,y$)} in $O(\log n + k)$ time, where $k$ is the number of elements that are at least $x$ and at most $y$. Prove that your solution is correct and that it has the appropriate running time.
+
+
+\section{Union-Find (30 points)}
+
+In this problem we'll consider what happens if we change our Union-Find data structure to \emph{not} use path compression.  We will still use union-by-rank, but Find operations will no longer compress the tree.  More formally, consider the following tree-based data structure.  Every element has a parent pointer and a rank value.
+
+\textbf{Make-Set($x$):} Set $x \rightarrow parent := x$ and set $x \rightarrow rank := 0$.  
+
+\textbf{Find($x$):} If $x \rightarrow parent == x$ then return $x$.  Else return $Find(x \rightarrow parent)$.
+
+\textbf{Union($x, y$):} 
+
+\qquad Let $w := Find(x)$ and let $z := Find(y)$.  
+
+\qquad If $(w \rightarrow rank) \geq (z \rightarrow rank)$ then set $z \rightarrow parent := w$, else set $w \rightarrow parent := z$.  
+
+\qquad If $(w \rightarrow rank) == (z \rightarrow rank)$, set $(w \rightarrow rank) := (w \rightarrow rank) + 1$
+
+\noindent In this problem we will analyze the running time of this variation.
+
+\begin{enumerate}
+\item (10 points) Recall that the height of any node $x$ is the maximum over all of the descendants of $x$ of the length of the path from $x$ to that descendant.  Prove that for every node $x$, the rank of $x$ is always equal to the height of $x$.  Hint: use induction.
+
+\item (10 points) Prove that if $x$ has rank $r$, then there are at least $2^r$ elements in the subtree rooted at $x$ (we did this in class for the more complicated data structure which uses path compression, but now you should do it for this version without path compression).
+
+\item (10 points) Using the previous two parts, prove that every operation (Make-Set, Union, and Find) takes only $O(\log n)$ time (where $n$ is the number of elements, i.e., the number of Make-Set operations).  
+
+\end{enumerate}
+
+
+\section{Hashing (30 points)}
+
+Let $H = \{h_1, h_2, \dots\}$ be a collection of hash functions, where $h_i : U \rightarrow \{0, 1, \dots, M-1\}$ for every $i$ and we assume that $|U| = 2^u$ and that $M = 2^b$ (the same setup as in class when we designed a universal hash family).  Recall that $H$ is a \emph{universal hash family} if $\textbf{Pr}_{h \sim H} [h(x) = h(y)] \leq 1/M$ for all $x,y \in U$.  
+
+Consider the following, slightly different definition.  We say that $H$ is a \emph{$2$-universal hash family} if $\textbf{Pr}_{h \sim H}[h(x) = a \land h(y) = b] \leq 1/M^2$ for all $x,y \in U$ with $x \neq y$ and $a,b \in \{0,1,\dots,M-1\}$.  
+
+\begin{enumerate}
+\item (10 points)  Prove that any $2$-universal hash family is also a universal hash family. 
+
+\item (10 points) Prove that for every $u$ and $b$ with $u > b \geq 1$ there is some universal hash family from $U$ to $\{0,1,\dots, M-1\}$ (with $|U| = 2^u$ and $M = 2^b$) which is \emph{not} a $2$-universal hash family.  Hint: think about the constructions from class and the textbook.
+
+\item (10 points) Give a universal hash family from $U = \{0,1,2,3,4,5,6,7\}$ to $\{0,1\}$ that contains at most four functions (and prove it is universal).  Is this also a $2$-universal hash family?  Why or why not?  
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
