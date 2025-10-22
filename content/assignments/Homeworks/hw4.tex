@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{theorem}
+\usepackage{hyperref}
+\usepackage{fullpage}
+%\usepackage[]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{enumitem}                     
+
+\newif\ifrubric
+\rubrictrue
+\rubricfalse
+
+% This is the stuff for normal spacing
+%\makeatletter
+% \setlength{\textwidth}{6.5in}
+% \setlength{\oddsidemargin}{0in}
+% \setlength{\evensidemargin}{0in}
+% \setlength{\topmargin}{0.25in}
+% \setlength{\textheight}{8.25in}
+% \setlength{\headheight}{0pt}
+% \setlength{\headsep}{0pt}
+% \setlength{\marginparwidth}{59pt}
+%
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{5pt plus 1pt}
+% \setlength{\theorempreskipamount}{5pt plus 1pt}
+% \setlength{\theorempostskipamount}{0pt}
+% \setlength{\abovedisplayskip}{8pt plus 3pt minus 6pt}
+ 
+ 
+ \usepackage{titlesec}
+
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat*{\paragraph}{\bfseries}
+\titleformat*{\subparagraph}{\bfseries}
+
+% \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+%                                   {2ex plus -1ex minus -.2ex}%
+%                                   {1.3ex plus .2ex}%
+%                                   {\normalfont\Large\bfseries}}%
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\large\bfseries}}%
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\normalsize\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{0mm}%
+%                                    {1ex \@plus1ex \@minus.2ex}%
+%                                    {-1em}%
+%                                    {\normalfont\normalsize\bfseries}}
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%                                       {2.0ex \@plus1ex \@minus .2ex}%
+%                                       {-1em}%
+%                                      {\normalfont\normalsize\bfseries}}
+%\makeatother
+
+\newenvironment{proof}{{\bf Proof:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofof}[1]{{\bf Proof of #1:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofofnobox}[1]{{\bf#1:  }}{}
+\newenvironment{example}{{\bf Example:  }}{\hfill\rule{2mm}{2mm}}
+%\renewcommand{\thesection}{\lecnum.\arabic{section}}
+
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+%\renewcommand{\theequation}{\lecnum.\arabic{equation}}
+%\renewcommand{\thefigure}{\lecnum.\arabic{figure}}
+
+%\newcounter{LecNum}
+%\setcounter{LecNum}{1}
+
+%\newtheorem{fact}{Fact}[LecNum]
+\newtheorem{fact}{Fact}
+\newtheorem{lemma}[fact]{Lemma}
+\newtheorem{theorem}[fact]{Theorem}
+\newtheorem{definition}[fact]{Definition}
+\newtheorem{corollary}[fact]{Corollary}
+\newtheorem{proposition}[fact]{Proposition}
+\newtheorem{claim}[fact]{Claim}
+\newtheorem{exercise}[fact]{Exercise}
+
+% math notation
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\F}{\ensuremath{\mathcal F}}
+\newcommand{\SymGrp}{\ensuremath{\mathfrak S}}
+
+\newcommand{\size}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil#1\right\rceil}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+
+% anupam's abbreviations
+\newcommand{\e}{\epsilon}
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\junk}[1]{}
+\newcommand{\sse}{\subseteq}
+\newcommand{\union}{\cup}
+\newcommand{\meet}{\wedge}
+
+\newcommand{\prob}[1]{\ensuremath{\text{{\bf Pr}$\left[#1\right]$}}}
+\newcommand{\expct}[1]{\ensuremath{\text{{\bf E}$\left[#1\right]$}}}
+\newcommand{\Event}{{\mathcal E}}
+
+\newcommand{\mnote}[1]{\normalmarginpar \marginpar{\tiny #1}}
+
+\setenumerate[0]{label=(\alph*)}
+
+\usepackage{alltt}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes}
+\tikzstyle{code} = [black!90, draw=black!30, fill=black!5, very thick,
+    rectangle, dashed, inner xsep=10pt, inner ysep=7pt]
+
+\newenvironment{codebox}{
+    \hspace{.05\textwidth}
+        \begin{tikzpicture}
+            \node[code] \bgroup
+                \begin{minipage}{.80\textwidth}
+                    \begin{alltt}}
+                    {\end{alltt}
+                \end{minipage}
+            \egroup;
+        \end{tikzpicture}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document begins here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\noindent {\large {\bf 601.433/633 Introduction to Algorithms} \hfill {{\bf Fall 2025}}}\\
+{{\bf Homework \#4}} \hfill {{\bf Due:} Nov 3, 2025, 11:59pm} \\
+\rule[0.1in]{\textwidth}{0.4pt}
+
+Remember: you may work in groups of up to three people, but must write up your solution entirely on your own.  Collaboration is limited to discussing the problems -- you may not look at, compare, reuse, etc.~any text from anyone else in the class.  Please include your list of collaborators on the first page of your submission.  You may use the internet to look up formulas, definitions, etc., but may not simply look up the answers online.  
+
+Please include proofs with all of your answers, unless stated otherwise.
+
+\noindent \rule[0.1in]{\textwidth}{0.4pt}
+
+\section{Word Segmentation (33 points)}
+A number of languages, both ancient and modern, are written without spaces between the words.  In these languages, an important problem is word segmentation: given a string of characters, divide the string into consecutive words.  In English, the analogous problem would consist of taking a string like ``meetateight" and deciding that the best segmentation is ``meet at eight" (and not ``me et at eight" or ``meet ate ight", etc.).  
+
+A natural approach to this problem is to find a segmentation that maximizes the cumulative ``quality"  of its individual constituent words.  Thus, suppose you are given a black box that, for any string of letters $x = x_1 x_2 x_3 \dots x_k$, will return a positive number $quality(x)$.  Larger quality values correspond to more plausible words.  (So $quality(``me")$ would be large, while $quality(``ght")$ would be small.)  By convention, we will set the quality of the empty string to be $0$, i.e., $quality(``")=0$.
+
+Given a long string of letters $y = y_1 y_2 \dots y_n$, a segmentation of $y$ is a partition of its letters into contiguous blocks of letters; each block corresponds to a word in the segmentation.  The \emph{total quality} of a segmentation is the sum of the qualities of the blocks.  
+
+Give an algorithm that takes a string $y$ and computes the maximum total quality of any segmentation (i.e., return the largest number $\alpha$ such that there is a segmentation of total quality $\alpha$ and no segmentation has total quality larger than $\alpha$).  Your algorithm should run in $O(n^2)$ time.  As always, prove correctness and running time.  You can treat a single call to the black box computing $quality(x)$ as a single computational step, no matter how long $x$ is.  
+
+
+
+  
+ 
+   
+   
+
+\section{Submatrices (34 points)}
+
+
+Let $A \in \{0,1\}^{n \times m}$ be a matrix with $n$ rows, $m$ columns, and where every entry is either $0$ or $1$.  We will let $A_{ij}$ denote the entry in row $i$ and column $j$, so for example $A_{11}$ is the top-left entry, $A_{n1}$ is the bottom-left entry, $A_{1m}$ is the top-right entry, and $A_{nm}$ is the bottom-right entry.  Suppose that we want to find the largest integer $k$ such that $A$ contains a $k \times k$ contiguous submatrix consisting of all $0$'s.  In other words, we want to find the largest $k$ such there exist values $i,j$ such that $A_{xy} = 0$ for all $i-k < x \leq i$ and $j-k < y \leq j$.  
+
+We will design a dynamic programming algorithm that runs in $O(nm)$ time for this problem.  
+
+\begin{enumerate}
+\item (17 points) For every $i,j \in \mathbb{N}$ with $1 \leq i \leq n$ and $1 \leq j \leq m$, let $S(i,j)$ denote the maximum value of $k$ such that there is a $k \times k$ contiguous submatrix of $A$ consisting of all $0$'s whose bottom-right corner is at $(i,j)$ (row $i$, column $j$).  Write a recursive formula for $S(i,j)$, and prove that your formula is correct.  
+
+Note: you will need to use this formula in the next part to get an $O(nm)$-time algorithm, so make sure that your formula is not too big/slow.
+
+\item (17 points) Give a dynamic programming algorithm based on your solution to part (a), and prove that it correctly finds the largest possible value of $k$ and runs in time $O(nm)$.
+
+\end{enumerate}
+
+
+
+
+\section{Reachable nodes (33 points)}
+Let $G$ be a directed graph represented by an adjacency list.  Suppose each node $u$ has a weight $w(u)$, which might be different for each node.  Give an algorithm that computes, for every node $u$, the maximum weight of any node that is reachable from $u$.  So, for example, if $G$ is strongly connected then every node can reach every other node, so for every node the maximum reachable weight is the same (the largest weight of any node in the graph).  
+
+More formally, for each vertex $u$ let $R(u)$ denote the vertices reachable from $u$.  Then when your algorithm is run on $G$, it should return an array of values where the value for node $u$ is $\max_{v \in R(u)} w(v)$.
+
+Your algorithm should run in $O(m+ n)$ time.  Prove correctness and running time.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
