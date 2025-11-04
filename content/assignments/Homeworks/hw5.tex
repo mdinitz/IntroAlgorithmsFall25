@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{theorem}
+\usepackage{hyperref}
+\usepackage{fullpage}
+%\usepackage[]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{enumitem}                     
+
+\newif\ifrubric
+\rubrictrue
+\rubricfalse
+
+% This is the stuff for normal spacing
+%\makeatletter
+% \setlength{\textwidth}{6.5in}
+% \setlength{\oddsidemargin}{0in}
+% \setlength{\evensidemargin}{0in}
+% \setlength{\topmargin}{0.25in}
+% \setlength{\textheight}{8.25in}
+% \setlength{\headheight}{0pt}
+% \setlength{\headsep}{0pt}
+% \setlength{\marginparwidth}{59pt}
+%
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{5pt plus 1pt}
+% \setlength{\theorempreskipamount}{5pt plus 1pt}
+% \setlength{\theorempostskipamount}{0pt}
+% \setlength{\abovedisplayskip}{8pt plus 3pt minus 6pt}
+ 
+ 
+ \usepackage{titlesec}
+
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat*{\paragraph}{\bfseries}
+\titleformat*{\subparagraph}{\bfseries}
+
+% \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+%                                   {2ex plus -1ex minus -.2ex}%
+%                                   {1.3ex plus .2ex}%
+%                                   {\normalfont\Large\bfseries}}%
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\large\bfseries}}%
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+%                                     {1ex plus -1ex minus -.2ex}%
+%                                     {1ex plus .2ex}%
+%                                     {\normalfont\normalsize\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{0mm}%
+%                                    {1ex \@plus1ex \@minus.2ex}%
+%                                    {-1em}%
+%                                    {\normalfont\normalsize\bfseries}}
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%                                       {2.0ex \@plus1ex \@minus .2ex}%
+%                                       {-1em}%
+%                                      {\normalfont\normalsize\bfseries}}
+%\makeatother
+
+\newenvironment{proof}{{\bf Proof:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofof}[1]{{\bf Proof of #1:  }}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofofnobox}[1]{{\bf#1:  }}{}
+\newenvironment{example}{{\bf Example:  }}{\hfill\rule{2mm}{2mm}}
+%\renewcommand{\thesection}{\lecnum.\arabic{section}}
+
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+%\renewcommand{\theequation}{\lecnum.\arabic{equation}}
+%\renewcommand{\thefigure}{\lecnum.\arabic{figure}}
+
+%\newcounter{LecNum}
+%\setcounter{LecNum}{1}
+
+%\newtheorem{fact}{Fact}[LecNum]
+\newtheorem{fact}{Fact}
+\newtheorem{lemma}[fact]{Lemma}
+\newtheorem{theorem}[fact]{Theorem}
+\newtheorem{definition}[fact]{Definition}
+\newtheorem{corollary}[fact]{Corollary}
+\newtheorem{proposition}[fact]{Proposition}
+\newtheorem{claim}[fact]{Claim}
+\newtheorem{exercise}[fact]{Exercise}
+
+% math notation
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\F}{\ensuremath{\mathcal F}}
+\newcommand{\SymGrp}{\ensuremath{\mathfrak S}}
+
+\newcommand{\size}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil#1\right\rceil}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\polylog}{\operatorname{polylog}}
+
+% anupam's abbreviations
+\newcommand{\e}{\epsilon}
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\junk}[1]{}
+\newcommand{\sse}{\subseteq}
+\newcommand{\union}{\cup}
+\newcommand{\meet}{\wedge}
+
+\newcommand{\prob}[1]{\ensuremath{\text{{\bf Pr}$\left[#1\right]$}}}
+\newcommand{\expct}[1]{\ensuremath{\text{{\bf E}$\left[#1\right]$}}}
+\newcommand{\Event}{{\mathcal E}}
+
+\newcommand{\mnote}[1]{\normalmarginpar \marginpar{\tiny #1}}
+
+\setenumerate[0]{label=(\alph*)}
+
+\usepackage{alltt}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes}
+\tikzstyle{code} = [black!90, draw=black!30, fill=black!5, very thick,
+    rectangle, dashed, inner xsep=10pt, inner ysep=7pt]
+
+\newenvironment{codebox}{
+    \hspace{.05\textwidth}
+        \begin{tikzpicture}
+            \node[code] \bgroup
+                \begin{minipage}{.80\textwidth}
+                    \begin{alltt}}
+                    {\end{alltt}
+                \end{minipage}
+            \egroup;
+        \end{tikzpicture}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document begins here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\noindent {\large {\bf 601.433/633 Introduction to Algorithms} \hfill {{\bf Fall 2025}}}\\
+{{\bf Homework \#5}} \hfill {{\bf Due:} Nov 17, 2025, 11:59pm} \\
+\rule[0.1in]{\textwidth}{0.4pt}
+
+Remember: you may work in groups of up to three people, but must write up your solution entirely on your own.  Collaboration is limited to discussing the problems -- you may not look at, compare, reuse, etc.~any text from anyone else in the class.  Please include your list of collaborators on the first page of your submission.  You may use the internet to look up formulas, definitions, etc., but may not simply look up the answers online.  
+
+Please include proofs with all of your answers, unless stated otherwise.
+
+\noindent \rule[0.1in]{\textwidth}{0.4pt}
+
+\section{Faster Shortest Paths (25 points)}
+Let $G = (V, E)$ be a directed graph with lengths $\ell : E \rightarrow \R$ with no negative-length cycles.  Let $v \in V$, and let $\alpha$ denote the maximum, over all $u \in V$, of the number of edges on a shortest path from $v$ to $u$ (where the shortest-path is defined with respect to the weights).  Given $G$, $w$, and $v$ (but not $\alpha$), give an algorithm that computes shortest path distances from $v$ to all other nodes in $O(m \alpha)$ time.  You may assume that $m = \Omega(n)$.  Prove correctness and running time.
+
+
+
+
+\section{Multi-Set Shortest Paths (25 points)}
+Let $G = (V, E)$ be a directed graph with weighted edges; edge weights can be positive, negative, or zero.  There are no negative-weight cycles.  Suppose the vertices of $G$ are partitioned into $k$ disjoint subsets $V_1, V_2, \dots, V_k$; that is, every vertex of $G$ belongs to exactly one subset $V_i$. For each $i, j \in [k]$, let $\delta(i, j)$ denote the minimum shortest-path distance between vertices in $V_i$ and vertices in $V_j$:
+\[
+\delta(i,j) = \min \left\{d(v_i, v_j) \mid v_i \in V_i\ \text{and}\ v_j \in V_j\right\}
+\]
+
+Design an algorithm to compute $\delta(i,j)$ for all $i,j \in [k]$ that runs in time $O(mn + kn\log n)$.  Prove correctness and running time.
+
+
+
+
+\section{MSTs and light edges (25 points)}
+Let $G = (V, E)$ be an undirected graph, and let $w : E \rightarrow \R^+$ be a positive edge weighting (edge weights are not necessarily distinct).  Recall that a \emph{light edge} for a cut $(S, V \setminus S)$ is an edge crossing the cut (one endpoint in $S$ and one endpoint not in $S$) with weight at most the weight of any edge crossing the cut.  
+\begin{enumerate}
+\item (8 points) Let $T$ be an MST.  Prove that every edge $e \in T$ is a light edge for some cut.  
+\item (8 points) Let $(S, V \setminus S)$ be a cut such that there is a unique light edge $e$ for the cut.  Prove that $e$ must be in \emph{every} MST. 
+\item (9 points) Prove that the minimum spanning tree is unique if, for every cut in the graph, there is a unique light edge for the cut.  
+\end{enumerate}
+
+
+
+\section{Matroids (25 points)}
+\begin{enumerate}
+\item (12 points) Let $G = (V, E)$ be an connected undirected graph.  Let $\mathcal I = \{I \subseteq E : (V, E \setminus I) \text{ is connected}\}$.  Prove that $(E, \mathcal I)$ is a matroid.
+\item (13 points) Let $U$ be a finite set and let $U_1, U_2, \dots, U_k$ be a partition of $U$ into nonempty disjoint subsets (where $k \geq 2$).  Let $r_1, r_2, \dots r_k$ be positive integers.  Let $\mathcal I = \{ S \subseteq U : |S \cap U_i| \leq r_i\}$ for all $i \in \{1,2,\dots k\}$.  Prove that $(U, \mathcal I)$ is a matroid.  
+\end{enumerate}
+
+
+\end{document}
+
+
